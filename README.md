@@ -24,14 +24,14 @@ docker run -d \
   --net=host \
   --log-opt max-size=10m \
   --log-opt max-file=3 \
-  -e TZ="Europe/Berlin" \
+  -e TZ="Asia/Shanghai" \
   -v /mnt/user/appdata/xteve/:/root/.xteve:rw \
   -v /mnt/user/appdata/xteve/_config/:/config:rw \
   -v /mnt/user/appdata/xteve/_guide2go/:/guide2go:rw \
   -v /mnt/user/appdata/xteve/_owi2plex/:/owi2plex:rw \
   -v /tmp/xteve/:/tmp/xteve:rw \
   -v /mnt/user/appdata/tvheadend/data/:/TVH \
-  alturismo/xteve_g2g_owi
+  daxingplay/xteve
 ```
 
 setup guide2go SD subscrition as follows or copy your existing .json files into your mounted /guide2go folder \
