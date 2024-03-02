@@ -1,5 +1,7 @@
 # xteve, guide2go, owi2plex in one docker with cron 
 
+> Modified from alturismo/xteve_g2g_owi, change the ffmpeg from self-compiling to install using apk. This version of ffmpeg works for me in my Plex server.
+
 docker runs in host mode \
 access xteve webui ip:34400/web/
 
