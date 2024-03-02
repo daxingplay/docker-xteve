@@ -9,7 +9,7 @@ RUN apk add --no-cache curl php
 # Install Python3 and owi2plex
 RUN apk add --no-cache python3 py3-pip libxml2 libxml2-dev
 RUN apk add --update --no-cache g++ libxslt-dev python3-dev
-RUN pip install click==8.0.1 requests==2.31.0 lxml==4.9.3 pyyaml==6.0.1 twine==4.0.2 future==0.18.3
+RUN pip install --break-system-packages click==8.0.1 requests==2.31.0 lxml==4.9.3 pyyaml==6.0.1 twine==4.0.2 future==0.18.3
 ADD https://raw.githubusercontent.com/cvarelaruiz/owi2plex/master/owi2plex.py /usr/bin/owi2plex.py
 ADD https://raw.githubusercontent.com/cvarelaruiz/owi2plex/master/version.py /usr/bin/version.py
 RUN chmod +x /usr/bin/owi2plex.py
@@ -41,6 +41,9 @@ ADD zap2xml.pl /usr/bin/zap2xml.pl
 
 # Add guide2go
 ADD guide2go /usr/bin/guide2go
+
+# Clean up
+RUN apk del g++ make
 
 # Add xTeve
 RUN wget https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_amd64.zip -O temp.zip; unzip temp.zip -d /usr/bin/; rm temp.zip
